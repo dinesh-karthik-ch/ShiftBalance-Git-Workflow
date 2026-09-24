@@ -1,4 +1,4 @@
-\# ShiftBalance - Dinesh Contributor Version
+ShiftBalance - Team Contributor Version
 
 
 
