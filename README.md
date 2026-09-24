@@ -1,4 +1,4 @@
-\# ShiftBalance
+ShiftBalance - Team Contributor Version
 
 
 
