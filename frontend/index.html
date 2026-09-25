@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShiftBalance | Workforce Management</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+
+    <div class="container-fluid px-4">
+
+        <a class="navbar-brand fw-bold fs-4" href="#">
+            Shift<span>Balance</span>
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-4">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        <i class="bi bi-grid me-1"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-people me-1"></i>
+                        Employees
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-calendar3 me-1"></i>
+                        Schedules
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-envelope me-1"></i>
+                        Leave Requests
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+
+                <div class="text-end d-none d-md-block">
+                    <div class="fw-semibold">Manager</div>
+                    <small class="text-muted">Administrator</small>
+                </div>
+
+                <div class="rounded-circle bg-primary text-white
+                            d-flex align-items-center justify-content-center"
+                     style="width:42px;height:42px;">
+                    M
+                </div>
+
+                <button class="btn btn-outline-dark btn-sm">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+</nav>
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="container-fluid px-4 py-4">
+
+    <!-- Header -->
+
+    <div class="d-flex flex-wrap justify-content-between
+                align-items-center mb-4">
+
+        <div>
+
+            <h2 class="fw-bold mb-1">
+                Good Morning, Manager
+            </h2>
+
+            <p class="text-muted mb-0">
+                Here's an overview of your workforce today.
+            </p>
+
+        </div>
+
+        <button class="btn btn-primary mt-3 mt-md-0">
+
+            <i class="bi bi-plus-lg me-2"></i>
+
+            Create Schedule
+
+        </button>
+
+    </div>
+
+
+    <!-- ================= STATISTICS ================= -->
+
+    <div class="row g-4 mb-4">
+
+        <!-- Employees -->
+
+        <div class="col-sm-6 col-xl-3">
+
+            <div class="card stat-card h-100">
+
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between">
+
+                        <div>
+
+                            <p class="text-muted mb-2">
+                                Total Employees
+                            </p>
+
+                            <h2 class="fw-bold mb-1">
+                                24
+                            </h2>
+
+                            <small class="text-success">
+                                <i class="bi bi-arrow-up"></i>
+                                2 this month
+                            </small>
+
+                        </div>
+
+                        <div class="stat-icon bg-primary-subtle
+                                    text-primary">
+
+                            <i class="bi bi-people"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Shifts -->
+
+        <div class="col-sm-6 col-xl-3">
+
+            <div class="card stat-card h-100">
+
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between">
+
+                        <div>
+
+                            <p class="text-muted mb-2">
+                                Today's Shifts
+                            </p>
+
+                            <h2 class="fw-bold mb-1"
+                                id="shiftCount">
+                                12
+                            </h2>
+
+                            <small class="text-muted">
+                                3 shifts remaining
+                            </small>
+
+                        </div>
+
+                        <div class="stat-icon bg-success-subtle
+                                    text-success">
+
+                            <i class="bi bi-calendar-check"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Leave -->
+
+        <div class="col-sm-6 col-xl-3">
+
+            <div class="card stat-card h-100">
+
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between">
+
+                        <div>
+
+                            <p class="text-muted mb-2">
+                                Pending Leave
+                            </p>
+
+                            <h2 class="fw-bold mb-1">
+                                3
+                            </h2>
+
+                            <small class="text-warning">
+                                Requires attention
+                            </small>
+
+                        </div>
+
+                        <div class="stat-icon bg-warning-subtle
+                                    text-warning">
+
+                            <i class="bi bi-clock-history"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Conflicts -->
+
+        <div class="col-sm-6 col-xl-3">
+
+            <div class="card stat-card h-100">
+
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between">
+
+                        <div>
+
+                            <p class="text-muted mb-2">
+                                Conflicts
+                            </p>
+
+                            <h2 class="fw-bold mb-1">
+                                1
+                            </h2>
+
+                            <small class="text-danger">
+                                Needs resolution
+                            </small>
+
+                        </div>
+
+                        <div class="stat-icon bg-danger-subtle
+                                    text-danger">
+
+                            <i class="bi bi-exclamation-triangle"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN GRID ================= -->
+
+    <div class="row g-4">
+
+        <!-- ================= SCHEDULE ================= -->
+
+        <div class="col-xl-8">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header bg-white py-3">
+
+                    <div class="d-flex justify-content-between
+                                align-items-center">
+
+                        <div>
+
+                            <h5 class="fw-bold mb-1">
+                                Today's Schedule
+                            </h5>
+
+                            <small class="text-muted">
+                                Wednesday, September 24
+                            </small>
+
+                        </div>
+
+                        <button class="btn btn-sm btn-outline-primary">
+                            View All
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-responsive">
+
+                    <table class="table align-middle mb-0">
+
+                        <thead>
+
+                            <tr>
+
+                                <th class="ps-4">
+                                    Employee
+                                </th>
+
+                                <th>
+                                    Shift
+                                </th>
+
+                                <th>
+                                    Department
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td class="ps-4">
+
+                                    <div class="d-flex align-items-center">
+
+                                        <div class="employee-avatar">
+                                            RN
+                                        </div>
+
+                                        <div class="ms-3">
+
+                                            <strong>
+                                                Rahul Nandhan
+                                            </strong>
+
+                                            <small class="d-block text-muted">
+                                                Employee
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    09:00 AM - 05:00 PM
+                                </td>
+
+                                <td>
+                                    Service
+                                </td>
+
+                                <td>
+
+                                    <span class="badge
+                                                 bg-success-subtle
+                                                 text-success">
+
+                                        Confirmed
+
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="ps-4">
+
+                                    <div class="d-flex align-items-center">
+
+                                        <div class="employee-avatar">
+                                            KS
+                                        </div>
+
+                                        <div class="ms-3">
+
+                                            <strong>
+                                                Shivanshu
+                                            </strong>
+
+                                            <small class="d-block text-muted">
+                                                Employee
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    10:00 AM - 06:00 PM
+                                </td>
+
+                                <td>
+                                    Operations
+                                </td>
+
+                                <td>
+
+                                    <span class="badge
+                                                 bg-success-subtle
+                                                 text-success">
+
+                                        Confirmed
+
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="ps-4">
+
+                                    <div class="d-flex align-items-center">
+
+                                        <div class="employee-avatar">
+                                            DK
+                                        </div>
+
+                                        <div class="ms-3">
+
+                                            <strong>
+                                                Dinesh Karthik
+                                            </strong>
+
+                                            <small class="d-block text-muted">
+                                                Manager
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    02:00 PM - 10:00 PM
+                                </td>
+
+                                <td>
+                                    Management
+                                </td>
+
+                                <td>
+
+                                    <span class="badge
+                                                 bg-warning-subtle
+                                                 text-warning">
+
+                                        Pending
+
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= QUICK ACTIONS ================= -->
+
+        <div class="col-xl-4">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header bg-white py-3">
+
+                    <h5 class="fw-bold mb-0">
+                        Quick Actions
+                    </h5>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <button class="btn action-btn w-100 text-start mb-3">
+
+                        <i class="bi bi-calendar-plus text-primary"></i>
+
+                        <span>
+                            Generate Weekly Schedule
+                        </span>
+
+                        <i class="bi bi-chevron-right ms-auto"></i>
+
+                    </button>
+
+
+                    <button class="btn action-btn w-100 text-start mb-3">
+
+                        <i class="bi bi-people text-success"></i>
+
+                        <span>
+                            Manage Employees
+                        </span>
+
+                        <i class="bi bi-chevron-right ms-auto"></i>
+
+                    </button>
+
+
+                    <button class="btn action-btn w-100 text-start mb-3">
+
+                        <i class="bi bi-file-earmark-text text-warning"></i>
+
+                        <span>
+                            Review Leave Requests
+                        </span>
+
+                        <i class="bi bi-chevron-right ms-auto"></i>
+
+                    </button>
+
+
+                    <button class="btn action-btn w-100 text-start">
+
+                        <i class="bi bi-exclamation-circle text-danger"></i>
+
+                        <span>
+                            Resolve Scheduling Conflicts
+                        </span>
+
+                        <i class="bi bi-chevron-right ms-auto"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= UPCOMING SHIFTS ================= -->
+
+    <div class="card shadow-sm mt-4">
+
+        <div class="card-header bg-white py-3">
+
+            <div class="d-flex justify-content-between">
+
+                <h5 class="fw-bold mb-0">
+                    Upcoming Shifts
+                </h5>
+
+                <a href="#" class="text-decoration-none">
+                    View Schedule
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card-body">
+
+            <div class="row g-3">
+
+                <div class="col-md-4">
+
+                    <div class="border rounded p-3">
+
+                        <div class="d-flex justify-content-between">
+
+                            <strong>
+                                Thursday
+                            </strong>
+
+                            <span class="badge bg-primary">
+                                8 shifts
+                            </span>
+
+                        </div>
+
+                        <p class="text-muted mb-0 mt-2">
+                            September 25
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="border rounded p-3">
+
+                        <div class="d-flex justify-content-between">
+
+                            <strong>
+                                Friday
+                            </strong>
+
+                            <span class="badge bg-primary">
+                                10 shifts
+                            </span>
+
+                        </div>
+
+                        <p class="text-muted mb-0 mt-2">
+                            September 26
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="border rounded p-3">
+
+                        <div class="d-flex justify-content-between">
+
+                            <strong>
+                                Saturday
+                            </strong>
+
+                            <span class="badge bg-primary">
+                                7 shifts
+                            </span>
+
+                        </div>
+
+                        <p class="text-muted mb-0 mt-2">
+                            September 27
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ========================================================= -->
+<!-- CREATE SCHEDULE MODAL -->
+<!-- ========================================================= -->
+
+<div class="modal fade" id="scheduleModal" tabindex="-1">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    <i class="bi bi-calendar-plus me-2"></i>
+                    Create Weekly Schedule
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Week Starting
+                    </label>
+
+                    <input
+                        type="date"
+                        class="form-control">
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Minimum Staff Per Shift
+                    </label>
+
+                    <input
+                        type="number"
+                        class="form-control"
+                        value="3">
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Scheduling Strategy
+                    </label>
+
+                    <select class="form-select">
+
+                        <option>
+                            Balanced Workload
+                        </option>
+
+                        <option>
+                            Maximum Availability
+                        </option>
+
+                        <option>
+                            Minimum Conflicts
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button class="btn btn-primary w-100">
+
+                    <i class="bi bi-magic me-2"></i>
+
+                    Generate Schedule
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- EMPLOYEE MODAL -->
+<!-- ========================================================= -->
+
+<div class="modal fade" id="employeeModal" tabindex="-1">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    <i class="bi bi-people me-2"></i>
+                    Employee Management
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <table class="table align-middle">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Employee
+                            </th>
+
+                            <th>
+                                Department
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                Rahul Nandhan
+                            </td>
+
+                            <td>
+                                Service
+                            </td>
+
+                            <td>
+                                <span class="badge bg-success">
+                                    Active
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Shivanshu
+                            </td>
+
+                            <td>
+                                Operations
+                            </td>
+
+                            <td>
+                                <span class="badge bg-success">
+                                    Active
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Dinesh Karthik
+                            </td>
+
+                            <td>
+                                Management
+                            </td>
+
+                            <td>
+                                <span class="badge bg-success">
+                                    Active
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- LEAVE REQUEST MODAL -->
+<!-- ========================================================= -->
+
+<div class="modal fade" id="leaveModal" tabindex="-1">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    <i class="bi bi-file-earmark-text me-2"></i>
+                    Pending Leave Requests
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="border rounded p-3">
+
+                    <div class="d-flex justify-content-between">
+
+                        <strong>
+                            Rahul Nandhan
+                        </strong>
+
+                        <span class="badge bg-warning text-dark">
+                            Pending
+                        </span>
+
+                    </div>
+
+                    <p class="text-muted mt-2 mb-3">
+                        Leave requested for Friday,
+                        September 26.
+                    </p>
+
+
+                    <button
+                        class="btn btn-sm btn-success approve-btn me-2">
+
+                        <i class="bi bi-check-lg"></i>
+                        Approve
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-sm btn-danger reject-btn">
+
+                        <i class="bi bi-x-lg"></i>
+                        Reject
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- CONFLICT MODAL -->
+<!-- ========================================================= -->
+
+<div class="modal fade" id="conflictModal" tabindex="-1">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title text-danger">
+
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+
+                    Scheduling Conflict
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="alert alert-danger">
+
+                    <strong>
+                        Conflict detected!
+                    </strong>
+
+                    <br>
+
+                    Dinesh Karthik has overlapping shifts.
+
+                </div>
+
+
+                <p>
+                    Review the assigned shifts and resolve the
+                    conflict before publishing the schedule.
+                </p>
+
+
+                <button class="btn btn-primary w-100">
+
+                    <i class="bi bi-wrench-adjustable me-2"></i>
+
+                    Resolve Conflict
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JavaScript -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Custom JavaScript -->
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
